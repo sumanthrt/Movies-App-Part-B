@@ -1,0 +1,38 @@
+.login{
+  color: white;
+  background-color: blue;
+  padding: 0 10px;
+  height: 100%;
+  border: none;
+  border-radius: 4px;
+}
+
+.login:hover {
+  cursor: pointer;
+}
+.heading {
+  background-color: #ff9999;
+  padding: 8px;
+  text-align: center;
+  font-size: 1rem;
+  display: block;
+}
+
+.flex-container {
+  display: flex;
+}
+
+.homeImages {
+  width: 76%;
+  margin: 16px;
+}
+
+.movieFilter {
+  width: 24%;
+  margin: 16px;
+}
+
+.leftListItem {
+  margin: 20px;
+  cursor: pointer;
+}
