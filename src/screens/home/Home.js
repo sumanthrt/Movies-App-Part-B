@@ -37,10 +37,10 @@ class Home extends Component {
         if (
           movie.title.toLowerCase() === userSelection.name.toLowerCase() ||
           movie.genres.some((genre) => userSelection.genres.includes(genre)) ||
-          (parseInt(new Date(movie.release_date).getTime()) <=
-            parseInt(new Date(userSelection.releaseDateEnd).getTime()) &&
-          parseInt(new Date(movie.release_date).getTime()) >=
-            parseInt(new Date(userSelection.releaseDateStart).getTime())) ||
+          (parseInt(new Date(movie.release_date).getTime(),10) <=
+            parseInt(new Date(userSelection.releaseDateEnd).getTime(),10) &&
+          parseInt(new Date(movie.release_date).getTime(),10) >=
+            parseInt(new Date(userSelection.releaseDateStart).getTime(),10)) ||
           movie.artists.some((artist) =>
             userSelection.artists.includes(
               `${artist.first_name} ${artist.last_name}`
@@ -49,6 +49,7 @@ class Home extends Component {
         ) {
           return movie;
         }
+        return null;
       });
       const state = this.state;
       state.userSelection = filteredMovies;

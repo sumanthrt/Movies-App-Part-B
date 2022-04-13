@@ -81,7 +81,7 @@ function Details() {
             <GridList cols={2}>
               {data.artists.map((artist) => (
                 <GridListTile key={artist.id}>
-                  <img src={artist.profile_url}></img>
+                  <img src={artist.profile_url} alt="artist images"></img>
                   <GridListTileBar
                     title={artist.first_name + " " + artist.last_name}
                   ></GridListTileBar>
