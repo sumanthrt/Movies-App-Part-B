@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 
 import Header from "../../common/header/Header";
 import "./Home.css";
@@ -9,16 +9,15 @@ import MovieFilter, { userSelection } from "./MovieFilter";
 import genres from "./genre";
 import artists from "./artists";
 
-class Home extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      data: moviesData,
-      genres: genres,
-      artists: artists,
-      userSelection: moviesData,
-    };
-  }
+function Home() {
+  const [homeState, setHomeState] = useState({
+    data: moviesData,
+    genres: genres,
+    artists: artists,
+    userSelection: moviesData,
+  });
+
+  const [movieState, setMovieState] = useState(moviesData);
 
   filterHandler = () => {
     if (
@@ -33,14 +32,17 @@ class Home extends Component {
       this.setState(state);
       return moviesData;
     } else {
-      const filteredMovies = this.state.data.filter((movie) => {
+      const filteredMovies = movieState.filter((movie) => {
         if (
           movie.title.toLowerCase() === userSelection.name.toLowerCase() ||
           movie.genres.some((genre) => userSelection.genres.includes(genre)) ||
-          (parseInt(new Date(movie.release_date).getTime(),10) <=
-            parseInt(new Date(userSelection.releaseDateEnd).getTime(),10) &&
-          parseInt(new Date(movie.release_date).getTime(),10) >=
-            parseInt(new Date(userSelection.releaseDateStart).getTime(),10)) ||
+          (parseInt(new Date(movie.release_date).getTime(), 10) <=
+            parseInt(new Date(userSelection.releaseDateEnd).getTime(), 10) &&
+            parseInt(new Date(movie.release_date).getTime(), 10) >=
+              parseInt(
+                new Date(userSelection.releaseDateStart).getTime(),
+                10
+              )) ||
           movie.artists.some((artist) =>
             userSelection.artists.includes(
               `${artist.first_name} ${artist.last_name}`
@@ -51,33 +53,38 @@ class Home extends Component {
         }
         return null;
       });
-      const state = this.state;
-      state.userSelection = filteredMovies;
-      this.setState(state);
+      const newState = filteredMovies;
+      setMovieState(newState);
     }
   };
 
-  render() {
-    return (
-      <div>
-        <Header btnType="loginbtn" variant="contained" buttonName="LOGIN" btnType2="hiddenbtn" buttonName2="hidden" btnType3="logoutbtn" buttonName3="LOGOUT"/>
-        <span className="heading">Upcoming movies</span>
-        <SingleLineImageList moviesData={this.state.data} />
-        <div className="flex-container">
-          <div className="homeImages">
-            <TitlebarImageList moviesData={this.state.userSelection} />
-          </div>
-          <div className="movieFilter">
-            <MovieFilter
-              genres={this.state.genres}
-              artists={this.state.artists}
-              filterHandler={this.filterHandler}
-            />
-          </div>
+  return (
+    <div>
+      <Header
+        btnType="loginbtn"
+        variant="contained"
+        buttonName="LOGIN"
+        btnType2="hiddenbtn"
+        buttonName2="hidden"
+        btnType3="logoutbtn"
+        buttonName3="LOGOUT"
+      />
+      <span className="heading">Upcoming movies</span>
+      <SingleLineImageList moviesData={homeState.data} />
+      <div className="flex-container">
+        <div className="homeImages">
+          <TitlebarImageList moviesData={movieState} />
+        </div>
+        <div className="movieFilter">
+          <MovieFilter
+            genres={homeState.genres}
+            artists={homeState.artists}
+            filterHandler={filterHandler}
+          />
         </div>
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default Home;
