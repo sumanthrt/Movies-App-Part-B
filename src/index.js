@@ -5,11 +5,13 @@ import "typeface-roboto";
 import registerServiceWorker from "./registerServiceWorker";
 // import Controller from './screens/Controller';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from './screens/home/Home';
-import Details from './screens/details/Details';
+import Home from "./screens/home/Home";
+import Details from "./screens/details/Details";
+import Header from "./common/header/Header";
 
 ReactDOM.render(
   <Router>
+    <Header />
     <Routes>
       <Route exact path="/" element={<Home />} />
       <Route path="/details" element={<Details />} />

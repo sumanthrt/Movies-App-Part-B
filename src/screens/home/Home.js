@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 
-import Header from "../../common/header/Header";
 import "./Home.css";
 import SingleLineImageList from "./MovieList";
 import moviesData from "../../common/moviesData";
@@ -60,15 +59,6 @@ function Home() {
 
   return (
     <div>
-      <Header
-        btnType="loginbtn"
-        variant="contained"
-        buttonName="LOGIN"
-        btnType2="hiddenbtn"
-        buttonName2="hidden"
-        btnType3="logoutbtn"
-        buttonName3="LOGOUT"
-      />
       <span className="heading">Upcoming movies</span>
       <SingleLineImageList moviesData={homeState.data} />
       <div className="flex-container">

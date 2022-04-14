@@ -10,7 +10,6 @@ import {
 import { Link, useLocation } from "react-router-dom";
 import Trailer from "./Trailer";
 import ReactStars from "react-rating-stars-component";
-import Header from "../../common/header/Header";
 
 const ratingChanged = (newRating) => {
   console.log(newRating);
@@ -21,7 +20,6 @@ function Details() {
   const data = location.state.movie;
   return (
     <div>
-      <Header btnType="bookshow" variant="contained" buttonName="BOOK SHOW" btnType2="login" buttonName2="LOGIN"  btnType3="logout" buttonName3="LOGOUT" />
       <div className="backBtn">
         <Link to="/">
           <Typography>{"<"} Back To Home</Typography>
