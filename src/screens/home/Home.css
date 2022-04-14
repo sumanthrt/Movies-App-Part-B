@@ -1,50 +1,60 @@
-.login{
-  background-color: white;
-  color: default;
-  padding: 0 10px;
-  margin-right: 1%;
-  height: 100%;
-  border: none;
-  border-radius: 4px;
-  float: right;
-}
-.header {
-  display: flex;
-  justify-content: space-between;
-}
-.logout{
-  display: none;
-}
-
-.bookshow{
-  display: none;
-}
-.login:hover {
-  cursor: pointer;
-}
-.heading {
+.heading{
+  display: block;
   background-color: #ff9999;
   padding: 8px;
   text-align: center;
   font-size: 1rem;
-  display: block;
 }
-
-.flex-container {
+.flex-container{
   display: flex;
 }
-
-.homeImages {
+.homeImages{
   width: 76%;
+  /* display: flex; */
   margin: 16px;
 }
-
-.movieFilter {
+.movieFilter{
   width: 24%;
   margin: 16px;
 }
 
-.leftListItem {
-  margin: 20px;
+.loginbtn{
+  background-color: white;
+  margin-right: 1%;
+  padding: 10px;
+  height: 100%;
+  border: none;
+  border-radius: 4px;
   cursor: pointer;
+}
+.logoutbtn{
+  background-color: white;
+  float: right;
+  width: 7% ;
+  margin-right: 1%;
+  padding: 0 10px;
+  height: 100%;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: none;
+}
+.hiddenbtn{
+  color: white;
+  background-color: blue;
+  float: right;
+  margin-right: 5%;
+  padding: 0 10px;
+  height: 100%;
+  border: none;
+  border-radius: 4px;
+  display: none;
+}
+/* .linkDiv > img{
+  width: 50px;
+  height: 50px;
+} */
+.image{
+  object-fit: contain;
+  width: 100%;
 }

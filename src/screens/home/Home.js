@@ -60,7 +60,7 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <Header btnType="login" variant="contained" buttonName="LOGIN" btnType2="bookshow" buttonName2="bookshow" btnType3="logout" buttonName3="LOGOUT"/>
+        <Header btnType="loginbtn" variant="contained" buttonName="LOGIN" btnType2="hiddenbtn" buttonName2="hidden" btnType3="logoutbtn" buttonName3="LOGOUT"/>
         <span className="heading">Upcoming movies</span>
         <SingleLineImageList moviesData={this.state.data} />
         <div className="flex-container">
