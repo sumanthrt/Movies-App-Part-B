@@ -1,6 +1,6 @@
 import React from "react";
 import "./Details.css";
-import "../../common/header/Header";
+// import "../../common/header/Header";
 import {
   Typography,
   GridList,
@@ -21,7 +21,7 @@ function Details() {
   const data = location.state.movie;
   return (
     <div>
-      <Header btnType="bookshow" variant="contained" buttonName="BOOK SHOW" />
+      <Header btnType="bookshow" variant="contained" buttonName="BOOK SHOW" btnType2="login" buttonName2="LOGIN"  btnType3="logout" buttonName3="LOGOUT" />
       <div className="backBtn">
         <Link to="/">
           <Typography>{"<"} Back To Home</Typography>

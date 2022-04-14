@@ -1,12 +1,24 @@
 .login{
-  color: white;
-  background-color: blue;
+  background-color: white;
+  color: default;
   padding: 0 10px;
+  margin-right: 1%;
   height: 100%;
   border: none;
   border-radius: 4px;
+  float: right;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+.logout{
+  display: none;
 }
 
+.bookshow{
+  display: none;
+}
 .login:hover {
   cursor: pointer;
 }

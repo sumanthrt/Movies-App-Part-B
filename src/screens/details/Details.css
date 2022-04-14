@@ -1,20 +1,42 @@
 .bookshow{
-    color: white;
+    color: default;
     background-color: blue;
+    width: 7%;
+    margin-right: 1%;
     padding: 0 10px;
     height: 100%;
     border: none;
     border-radius: 4px;
 }
-
+.logout{
+    background-color: white;
+    /* float: right; */
+    width: 7% ;
+    margin-right: 1%;
+    padding: 0 10px;
+    height: 100%;
+    border: none;
+    border-radius: 4px;
+    /* cursor: pointer; */
+}
+.login{
+    color: default;
+    background-color: white;
+    /* float: right; */
+    margin-right: 5%;
+    padding: 0 10px;
+    height: 100%;
+    border: none;
+    border-radius: 4px;
+}
 .backBtn{
     margin: 8px 0 0 24px;
     height: 24px;
 }
 
-.backBtn:hover,.bookshow:hover {
+/* .backBtn:hover,.bookshow:hover {
     cursor: pointer;
-}
+} */
 
 .flex-container {
     display: flex;
