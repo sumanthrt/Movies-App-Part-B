@@ -19,7 +19,7 @@ function Home() {
 
   const [movieState, setMovieState] = useState(moviesData);
 
-  filterHandler = () => {
+  var filterHandler = () => {
     if (
       userSelection.name === "" &&
       userSelection.releaseDateStart === "" &&
